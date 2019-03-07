@@ -10,16 +10,25 @@ namespace automationpractice
     public class ContactUs
     {
         IWebDriver driver;
+        IWebDriver driver2;
+
+
+
+
         [TestInitialize]
         public void TestInitialize()
         {
             driver = new ChromeDriver();
         }
-        //oiuhsdfgu9ho9sdfun
+
+      
+    
+
         [TestMethod]
         public void ContactUsTest()
         {
             driver.Url = "http://automationpractice.com/index.php";
+
             driver.FindElement(By.Id("contact-link")).Click();
             new SelectElement(driver.FindElement(By.Id("id_contact"))).SelectByValue("2");
             driver.FindElement(By.Id("email")).SendKeys("hola@mailinator.com");
@@ -33,11 +42,15 @@ namespace automationpractice
             Assert.AreEqual("Your message has been successfully sent to our team.", sucess);
 
         }
-
+        
         [TestCleanup]
         public void TestCleanup()
         {
             driver.Quit();
         }
     }
+
+    
+
 }
+
