@@ -10,13 +10,11 @@ namespace automationpractice
     public class Challenge2
     {
         IWebDriver dri;
-        WebDriverWait dri1;
-
+        
         [TestInitialize]
         public void TestInitialize()
         {
             dri = new ChromeDriver();
-            dri1 = new WebDriverWait(dri, new TimeSpan(1));
         }
 
         [TestMethod]
@@ -37,7 +35,7 @@ namespace automationpractice
             dri.FindElement(By.Id("postcode")).SendKeys("73301");
             dri.FindElement(By.Id("phone_mobile")).SendKeys("3057999700");
             dri.FindElement(By.Id("submitAccount")).Click();
-            String verificacion=dri.FindElement(By.ClassName("info-account")).Text;
+            string verificacion=dri.FindElement(By.ClassName("info-account")).Text;
             Assert.AreEqual("Welcome to your account. Here you can manage all of your personal information and orders.", verificacion);
             dri.FindElement(By.ClassName("logout")).Click();
 

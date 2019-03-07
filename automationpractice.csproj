@@ -58,6 +58,7 @@
     <Compile Include="ContactUs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Challenge2.cs" />
+    <Compile Include="Challenge3.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
